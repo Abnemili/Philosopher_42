@@ -6,37 +6,23 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:37:33 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/18 17:07:00 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:16:10 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+
+
 int	main(int ac, char **av)
 {
-	int	i;
-
-	i = 1;
+	// t_program	program;
+	// t_philo		philos[PHILO_MAX];
+	// pthread_mutex_t	forks[PHILO_MAX];
+	
 	if (ac != 6)
-	{
-		ft_putstr("Error\nInvlaide agrument number\n");
-	}
-	else 
-	{
-		while (av[i])
-		{
-			if (is_digit(av[i]) == 1)
-			{
-				ft_putstr("Error\nInvlaide input\n");
-				return (1);
-			}
-			if (check_valide_arv(av[i]) == 1)
-			{
-				ft_putstr("Error\nNumber is less then 1\n");
-				return (1);
-			}
-			i++;
-		}
-	}
+		return (ft_putstr("Error\nWrong argument number\n"), 1);
+	if (check_valide_av(av) == 1)
+		exit(1);
 	
 }

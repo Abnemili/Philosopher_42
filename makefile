@@ -6,7 +6,7 @@
 #    By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/18 14:51:41 by abnemili          #+#    #+#              #
-#    Updated: 2025/04/18 16:41:56 by abnemili         ###   ########.fr        #
+#    Updated: 2025/04/20 15:03:37 by abnemili         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-SRC = main.c functions.c handl_input.c
+SRC = main.c functions.c check_input.c
 
 OBJ = $(SRC:.c=.o)
 
