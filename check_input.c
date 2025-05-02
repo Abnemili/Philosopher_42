@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 14:50:31 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/20 15:09:15 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/21 17:16:48 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ int check_valide_av(char **av)
     if (ft_atoi(av[5]) < 0 || is_digit(av[5]))
         return (ft_putstr("Error\nInvalid times each philo should eat\n"), 1);       
     return (0);
-}
+} 

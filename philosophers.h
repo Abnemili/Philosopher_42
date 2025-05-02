@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:35:53 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/20 15:06:38 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/02 20:39:10 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 # define PHILO_MAX 300
 
+typedef pthread_mutex_t my_mutex;
+
 typedef struct s_philo
 {
 	pthread_t		thread;
@@ -37,26 +39,38 @@ typedef struct s_philo
 	int				num_of_philos;
 	int				num_times_to_eat;
 	int				*dead;
-	pthread_mutex_t	*r_fork;
-	pthread_mutex_t	*l_fork;
-	pthread_mutex_t	*write_lock;
-	pthread_mutex_t	*dead_lock;
-	pthread_mutex_t	*meal_lock;
+	my_mutex	*r_fork;
+	my_mutex	*l_fork;
+	my_mutex	*write_lock;
+	my_mutex	*dead_lock;
+	my_mutex	*meal_lock;
 }					t_philo;
 
 typedef struct s_program
 {
 	int				dead_flag;
-	pthread_mutex_t	dead_lock;
-	pthread_mutex_t	meal_lock;
-	pthread_mutex_t	write_lock;
-	t_philo			*philos;
+	my_mutex	dead_lock;
+	my_mutex	meal_lock;
+	my_mutex	write_lock;
+	my_mutex		*philos;
 }					t_program;
 
+// parssing functions 
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 int     is_digit(char *av);
-int	ft_atoi(const char *nptr);
-int check_valide_av(char **av);
+int		ft_atoi(const char *nptr);
+int		check_valide_av(char **av);
+
+// execution part
+void	init_the_program(t_program *program, t_philo *philos);
+void 	init_the_forks(my_mutex *forks, int num_of_philos);
+void 	init_input(t_philo*philo, char **av); // same file 
+size_t	get_current_time(void);
+void	*monitor(void *pointer);
+int 	thread_creation (t_program *program, my_mutex *forks);
+void	destory_all(char *str, t_program *program, my_mutex *forks);
+void	*philo_routine(void *pointer);
+void 	init_philos(t_philo *philos, t_program *program, my_mutex *forks, char **av);
 
 #endif
