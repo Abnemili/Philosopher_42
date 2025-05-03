@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:35:53 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/02 20:39:10 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/03 20:44:45 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,13 @@ void 	init_the_forks(my_mutex *forks, int num_of_philos);
 void 	init_input(t_philo*philo, char **av); // same file 
 size_t	get_current_time(void);
 void	*monitor(void *pointer);
+void 	init_philos(t_philo *philos, t_program *program, my_mutex *forks, char **av);
 int 	thread_creation (t_program *program, my_mutex *forks);
 void	destory_all(char *str, t_program *program, my_mutex *forks);
+
+// routing functions
 void	*philo_routine(void *pointer);
-void 	init_philos(t_philo *philos, t_program *program, my_mutex *forks, char **av);
+void 	ft_eat(t_philo *philo);
+void	print_mssg(char *str, t_philo *philo, int id);
 
 #endif

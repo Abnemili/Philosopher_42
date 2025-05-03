@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:37:33 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/01 09:31:10 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/03 20:48:52 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(int ac, char **av)
 	init_the_forks(forks,ft_atoi(av[1]));
 	init_philos(philos, &program, forks, av);
 	thread_creation(&program, forks);
-	
+	destroy_all(NULL, &program, forks);
+	return (0);
 }

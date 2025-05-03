@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 09:32:00 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/02 20:56:21 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/03 18:18:01 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	*philo_routine(void *pointer)
 		ft_usleep(1);
 	while (!dead_loop(philo))
 	{
-		eat(philo);
-		dream(philo);
-		think(philo);
+		ft_eat(philo);
+		ft_sleep(philo);
+		ft_think(philo);
 	}
 	return (pointer);
 }
