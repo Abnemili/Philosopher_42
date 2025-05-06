@@ -1,38 +1,32 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/18 14:51:41 by abnemili          #+#    #+#              #
-#    Updated: 2025/04/20 15:03:37 by abnemili         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = philosopher
 
-NAME = philosophers
+SRC = main.c utils.c init.c threads.c monitor.c routine_actions.c
 
-CC = cc
+MANPATH = $(addprefix ./src/, $(SRC))
 
-CFLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror -O3 -pthread
 
-RM = rm -rf
+HEADER = ./src/philosophers.h
 
-SRC = main.c functions.c check_input.c
+# SANITIZER = -fsanitize=thread
 
-OBJ = $(SRC:.c=.o)
+.PHONY: all clean fclean re debug
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(MANPATH) $(HEADER)
+	@cc $(FLAGS) -o $(NAME) $(MANPATH) $(SANITIZER)
 
 clean:
-	$(RM) $(OBJ)
+	@rm -f $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all re clean fclean
+debug: FLAGS += -g
+debug: re
+
+delay:
+	python3 delay_o_meter.py
