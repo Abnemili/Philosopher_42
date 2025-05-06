@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:18:09 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 11:17:07 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:05:16 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	*philo_routine(void *pointer)
 
 int	thread_create(t_program *program, pthread_mutex_t *forks)
 {
-	pthread_t	observer;
+	pthread_t	monitor_thread;
 	int			i;
 
-	if (pthread_create(&observer, NULL, &monitor, program->philos) != 0)
+	if (pthread_create(&monitor_thread, NULL, &monitor, program->philos) != 0)
 		destroy_all("Thread creation error", program, forks);
 	i = 0;
 	while (i < program->philos[0].num_of_philos)
@@ -55,7 +55,7 @@ int	thread_create(t_program *program, pthread_mutex_t *forks)
 		i++;
 	}
 	i = 0;
-	if (pthread_join(observer, NULL) != 0)
+	if (pthread_join(monitor_thread, NULL) != 0)
 		destroy_all("Thread join error", program, forks);
 	while (i < program->philos[0].num_of_philos)
 	{

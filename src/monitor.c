@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:18:49 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 10:19:25 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:19:15 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int	philosopher_dead(t_philo *philo, size_t time_to_die)
 	pthread_mutex_unlock(philo->meal_lock);
 	return (0);
 }
-
-// Check if any philo died
 
 int	check_if_dead(t_philo *philos)
 {
@@ -87,8 +85,6 @@ int	check_if_all_ate(t_philo *philos)
 	}
 	return (0);
 }
-
-// Monitor thread routine
 
 void	*monitor(void *pointer)
 {
