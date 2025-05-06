@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:13:54 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 14:10:22 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:13:43 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	pthread_mutex_t	forks[PHILO_MAX];
 
 	if (argc != 5 && argc != 6)
-		return (write(2, "Wrong argument number\n", 22), 1); // should be changed to ft_putstr
+		return (write(2, "Wrong argument number\n", 22), 1);
 	if (check_valid_args(argv) == 1)
 		return (1);
 	init_program(&program, philos);

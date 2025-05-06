@@ -6,12 +6,12 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:14:41 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 10:48:04 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:15:15 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#ifndef PHILOSOPHERS_H
+# define PHILOSOPHERS_H
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
