@@ -6,13 +6,11 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:18:49 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 15:19:15 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:09:57 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-// Print message funtion
 
 void	print_message(char *str, t_philo *philo, int id)
 {
@@ -24,8 +22,6 @@ void	print_message(char *str, t_philo *philo, int id)
 		printf("%zu %d %s\n", time, id, str);
 	pthread_mutex_unlock(philo->write_lock);
 }
-
-// Checks if the philosopher is dead
 
 int	philosopher_dead(t_philo *philo, size_t time_to_die)
 {
@@ -56,8 +52,6 @@ int	check_if_dead(t_philo *philos)
 	}
 	return (0);
 }
-
-// Checks if all the philos ate the num_of_meals
 
 int	check_if_all_ate(t_philo *philos)
 {

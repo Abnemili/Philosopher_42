@@ -8,10 +8,6 @@ FLAGS = -Wall -Wextra -Werror -O3 -pthread
 
 HEADER = ./src/philosophers.h
 
-# SANITIZER = -fsanitize=thread
-
-.PHONY: all clean fclean re debug
-
 all: $(NAME)
 
 $(NAME): $(MANPATH) $(HEADER)
@@ -25,8 +21,4 @@ fclean: clean
 
 re: fclean all
 
-debug: FLAGS += -g
-debug: re
-
-delay:
-	python3 delay_o_meter.py
+.PHONY: all clean fclean re debug

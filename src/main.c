@@ -6,13 +6,11 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:13:54 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 16:13:43 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:15:58 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-// Checks that the input is only numbers
 
 int	check_arg_content(char *arg)
 {
@@ -27,8 +25,6 @@ int	check_arg_content(char *arg)
 	}
 	return (0);
 }
-
-// Checks if the program input is correct
 
 int	check_valid_args(char **argv)
 {
@@ -46,7 +42,6 @@ int	check_valid_args(char **argv)
 				51), 1);
 	return (0);
 }
-// Main function
 
 int	main(int argc, char **argv)
 {

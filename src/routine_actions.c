@@ -6,28 +6,22 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:20:11 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 16:12:56 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:42:19 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-// Think routine funtion
 
 void	think(t_philo *philo)
 {
 	print_message(": is thinking", philo, philo->id);
 }
 
-// Dream routine funtion
-
 void	dream(t_philo *philo)
 {
 	print_message(": is sleeping", philo, philo->id);
 	ft_usleep(philo->time_to_sleep);
 }
-
-// Eat routine funtion
 
 void	eat(t_philo *philo)
 {

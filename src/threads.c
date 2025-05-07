@@ -6,13 +6,11 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:18:09 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/06 14:05:16 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:38:41 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-// Checks if the value of dead_flag changed
 
 int	dead_loop(t_philo *philo)
 {
