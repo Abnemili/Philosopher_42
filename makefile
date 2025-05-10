@@ -1,17 +1,13 @@
-NAME = philosopher
-
+NAME = philo
 SRC = main.c utils.c init.c threads.c monitor.c routine_actions.c
-
-MANPATH = $(addprefix ./src/, $(SRC))
 
 FLAGS = -Wall -Wextra -Werror -O3 -pthread
 
-HEADER = ./src/philosophers.h
 
 all: $(NAME)
 
-$(NAME): $(MANPATH) $(HEADER)
-	@cc $(FLAGS) -o $(NAME) $(MANPATH) $(SANITIZER)
+$(NAME): $(SRC) 
+	@cc $(FLAGS) -o $(NAME) $(SRC) $(SANITIZER)
 
 clean:
 	@rm -f $(NAME)
