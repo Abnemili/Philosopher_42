@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:18:49 by abnemili          #+#    #+#             */
-/*   Updated: 2025/05/10 16:03:22 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/05/10 16:40:56 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,3 @@ void	*monitor(void *pointer)
 	}
 	return (pointer);
 }
-
